@@ -1,3 +1,19 @@
+```sh
+cd dist
+```
+
+then open `index.html`
+
+add the query string
+
+```
+index.html?api=https%3A//petstore.swagger.io/v2/swagger.json
+```
+
+for `https://petstore.swagger.io/v2/swagger.json`
+
+This way we can have swagger docs hosted ones with just different URL pointing to different JSON definition.
+
 # <img src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWU-logo-clr.png" width="300">
 
 [![NPM version](https://badge.fury.io/js/swagger-ui.svg)](http://badge.fury.io/js/swagger-ui)
