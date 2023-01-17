@@ -1,14 +1,12 @@
 window.onload = function() {
-  const params = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => searchParams.get(prop),
-  });
-  const encoded_url = params.api;
-  const decoded_url = unescape(encoded_url);
-  //<editor-fold desc="Changeable Configuration Block">
+  let swagger_url = window.location.href;
+  if (swagger_url[swagger_url.length - 1] == '/') {
+    swagger_url = swagger_url.slice(0, swagger_url.length - 1);
+  }
+  swagger_url = swagger_url + '.json';
 
-  // the following lines will be replaced by docker/configurator, when it runs in a docker-container
   window.ui = SwaggerUIBundle({
-    url: decoded_url,
+    url: swagger_url,
     dom_id: '#swagger-ui',
     deepLinking: true,
     presets: [
